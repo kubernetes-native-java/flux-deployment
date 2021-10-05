@@ -13,3 +13,10 @@ spec:
     name: podinfo
   validation: client
 
+ patchesStrategicMerge:
+    - apiVersion: autoscaling/v2beta2
+      kind: HorizontalPodAutoscaler
+      metadata:
+        name: podinfo
+      spec:
+        minReplicas: 3
